@@ -1,19 +1,19 @@
 class FigmaExplorer < Formula
   desc "High-level CLI on top of the Figma REST API: name-based navigation, asset extraction, design tokens, and bundled context export."
   homepage "https://github.com/akesson/figma-explorer"
-  version "0.2.0"
+  version "0.2.1"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/akesson/figma-explorer/releases/download/v0.2.0/figma-explorer-aarch64-apple-darwin.tar.xz"
-    sha256 "3cbaff3a738d985c58ee0a1712fcf2900ac79fadeab12e776ee644defc38698e"
+    url "https://github.com/akesson/figma-explorer/releases/download/v0.2.1/figma-explorer-aarch64-apple-darwin.tar.xz"
+    sha256 "0eb75fc7deb90b49fc4a6a1c47beb29c06046cb6ce94e998b7c459bd2741fde1"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/akesson/figma-explorer/releases/download/v0.2.0/figma-explorer-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "2347315a89087dd9640625f0c208b1db8ec618829becb134aea7909b482342c8"
+      url "https://github.com/akesson/figma-explorer/releases/download/v0.2.1/figma-explorer-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "c7cb7e6016fb551be4347ed70b91739271f424657e9d5ac2796ac94814935207"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/akesson/figma-explorer/releases/download/v0.2.0/figma-explorer-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "36402e00442d407338d42b24e536fc3f7594a740f8d0a0b016bbd4f35eb3df25"
+      url "https://github.com/akesson/figma-explorer/releases/download/v0.2.1/figma-explorer-x86_64-unknown-linux-musl.tar.xz"
+      sha256 "1aea8277ee3cf2be41f7c9c39d88a0420b70879194aa56f4b0118c5085340347"
     end
   end
   license "MIT"
@@ -43,9 +43,15 @@ class FigmaExplorer < Formula
   end
 
   def install
-    bin.install "figma-explorer" if OS.mac? && Hardware::CPU.arm?
-    bin.install "figma-explorer" if OS.linux? && Hardware::CPU.arm?
-    bin.install "figma-explorer" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "figma-explorer"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "figma-explorer"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "figma-explorer"
+    end
 
     install_binary_aliases!
 
