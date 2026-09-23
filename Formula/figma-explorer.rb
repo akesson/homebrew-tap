@@ -1,19 +1,19 @@
 class FigmaExplorer < Formula
   desc "High-level CLI on top of the Figma REST API: name-based navigation, asset extraction, design tokens, and bundled context export."
   homepage "https://github.com/akesson/figma-explorer"
-  version "0.2.2"
+  version "0.2.3"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/akesson/figma-explorer/releases/download/v0.2.2/figma-explorer-aarch64-apple-darwin.tar.xz"
-    sha256 "b9143b39f0833105b00eabb05838057ac772e5e7ca52b227430e791f6d4db4c9"
+    url "https://github.com/akesson/figma-explorer/releases/download/v0.2.3/figma-explorer-aarch64-apple-darwin.tar.xz"
+    sha256 "77ca007cf824cb7b0a1288bd8562c9df0195048ae4df2a9831d675c5faea5f70"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/akesson/figma-explorer/releases/download/v0.2.2/figma-explorer-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "182468825bdfae9673488eac9826499ae10724b4c707c4544f7c4c4134495595"
+      url "https://github.com/akesson/figma-explorer/releases/download/v0.2.3/figma-explorer-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "b73883c6e24d5291322f9f2e9099ac74a266e0be8a598211da8cfc321e8fdf84"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/akesson/figma-explorer/releases/download/v0.2.2/figma-explorer-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "8ac486ffe165f1da387d7a081f44d753ac984ac319a9aed69bf5f44b2b7608e9"
+      url "https://github.com/akesson/figma-explorer/releases/download/v0.2.3/figma-explorer-x86_64-unknown-linux-musl.tar.xz"
+      sha256 "c29d3693fb5e32a125765849a1f872179e021f9dc9806cb39b3e115ba89db42e"
     end
   end
   license "MIT"
